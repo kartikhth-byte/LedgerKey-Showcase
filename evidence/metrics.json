@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "scope": "Local application checks and synthetic public example; not production or model accuracy",
+  "application_tests": {
+    "passed": 306,
+    "failed": 0,
+    "skipped": 0,
+    "test_files": 39,
+    "runs": 1,
+    "command": "npm test -- --reporter=json",
+    "source_state": "Application files match reviewed pushed source; unrelated working documentation excluded"
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 4,
+    "warning_category": "react-refresh/only-export-components"
+  },
+  "build": {
+    "passed": true,
+    "warning": "JavaScript chunk exceeds 500 kB"
+  },
+  "inventory": {
+    "business_tools": 15,
+    "metrics": 13,
+    "live_eval_cases": 21
+  },
+  "public_example": {
+    "tests_passed": 6,
+    "tests_failed": 0,
+    "distinct_sweep_totals": 10001,
+    "sweep_configurations": 30003,
+    "data": "synthetic",
+    "excerpt_sha256": "efe01dcc959ac0d5603d45f23bf221b9df89cc21324cbc168d1a839307944e0f",
+    "excerpt_provenance": "Two unchanged allocation functions extracted from the reviewed dashboard implementation; header excluded from digest"
+  },
+  "not_rerun": [
+    "database RLS",
+    "SQL metrics parity",
+    "product Playwright",
+    "live AI",
+    "Telegram delivery"
+  ],
+  "claims_excluded": [
+    "production scale",
+    "model accuracy",
+    "time savings",
+    "financial impact"
+  ]
+}
