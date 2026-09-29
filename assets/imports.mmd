@@ -1,0 +1,9 @@
+flowchart TD
+    A[CSV upload] --> B[Parse and classify]
+    B --> C[Raw rows and normalized preview]
+    C --> D{Owner review}
+    D -->|Needs correction| E[Resolve mappings or unknown rows]
+    E --> D
+    D -->|Approve Airbnb import| F[Commit status and rollup transaction]
+    F --> G[(Bookings, lines and payouts)]
+    F -->|Failure rolls back| C

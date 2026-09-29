@@ -1,0 +1,7 @@
+flowchart TD
+    A[Airbnb and bank CSVs] --> B[Parse and preserve source rows]
+    B --> C[Owner import review]
+    C --> D[(Tenant financial records)]
+    E[Staff and owner entry] --> D
+    D --> F[Reconciliation and reports]
+    D --> G[Optional AI read tools]

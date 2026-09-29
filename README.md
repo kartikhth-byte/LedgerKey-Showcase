@@ -30,15 +30,9 @@ These are engineering checks, not adoption, financial-impact, or model-accuracy 
 
 ## How it works
 
-```mermaid
-flowchart TD
-    A[Airbnb and bank CSVs] --> B[Parse and preserve source rows]
-    B --> C[Owner import review]
-    C --> D[(Tenant financial records)]
-    E[Staff and owner entry] --> D
-    D --> F[Reconciliation and reports]
-    D --> G[Optional AI read tools]
-```
+![LedgerKey overview](assets/overview.png)
+
+[Diagram source](assets/overview.mmd)
 
 All reads and writes cross authorization checks; the simplified arrows above show data flow. [Detailed import and AI boundaries](docs/architecture.md).
 

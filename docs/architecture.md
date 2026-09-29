@@ -12,17 +12,9 @@ The project documents Vercel as the intended frontend host. No live frontend dep
 
 ## Import boundary
 
-```mermaid
-flowchart TD
-    A[CSV upload] --> B[Parse and classify]
-    B --> C[Raw rows and normalized preview]
-    C --> D{Owner review}
-    D -->|Needs correction| E[Resolve mappings or unknown rows]
-    E --> D
-    D -->|Approve Airbnb import| F[Commit status and rollup transaction]
-    F --> G[(Bookings, lines and payouts)]
-    F -->|Failure rolls back| C
-```
+![Airbnb import review and transactional commit](../assets/imports.png)
+
+[Diagram source](../assets/imports.mmd)
 
 Raw files and source rows are retained separately from normalized financial records. Hashes support duplicate detection; parser versions support traceability. Listing labels are not treated as stable property identifiers. Unknown transaction types remain visible for review. Payout allocations are not inferred from adjacent CSV rows.
 
@@ -32,16 +24,9 @@ The commit transaction above is specifically the implemented Airbnb path. Bank i
 
 ## Optional AI boundary
 
-```mermaid
-flowchart TD
-    A[Owner question] --> B[Membership, role and quota gate]
-    B -->|Denied| C[Structured refusal]
-    B -->|Allowed| D[Model chooses registered tool]
-    D --> E[Recheck access before dispatch]
-    E --> F[Caller JWT read or metrics RPC]
-    F --> G[Tool result and cited answer]
-    G -->|Export intent only| H[User confirms CSV download]
-```
+![Optional AI authorization and export confirmation](../assets/ai.png)
+
+[Diagram source](../assets/ai.mmd)
 
 The standard reports and exports work without AI. No AI step sits on the import commit path. The tool registry defines supported parameters and role availability; the model does not generate SQL or mutate ledger records. An export tool returns an intent, and the client fetches authorized data and uses the existing report exporter after confirmation.
 

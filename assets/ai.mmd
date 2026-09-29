@@ -1,0 +1,8 @@
+flowchart TD
+    A[Owner question] --> B[Membership, role and quota gate]
+    B -->|Denied| C[Structured refusal]
+    B -->|Allowed| D[Model chooses registered tool]
+    D --> E[Recheck access before dispatch]
+    E --> F[Caller JWT read or metrics RPC]
+    F --> G[Tool result and cited answer]
+    G -->|Export intent only| H[User confirms CSV download]
