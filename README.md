@@ -42,10 +42,10 @@ Split a synthetic **₹100.01** shared expense equally across three units. Round
 
 | Synthetic unit | Equal split | 50% / 30% / 20% split |
 |---|---:|---:|
-| Unit A | 3,334 paise | 5,001 paise |
-| Unit B | 3,334 paise | 3,000 paise |
-| Unit C | 3,333 paise | 2,000 paise |
-| **Total** | **10,001 paise** | **10,001 paise** |
+| Unit A | ₹33.34 | ₹50.01 |
+| Unit B | ₹33.34 | ₹30.00 |
+| Unit C | ₹33.33 | ₹20.00 |
+| **Total** | **₹100.01** | **₹100.01** |
 
 **[View production code](examples/allocation.ts)** · [Run the demo](examples/README.md) · [Inspect tests](examples/allocation.test.mjs)
 
